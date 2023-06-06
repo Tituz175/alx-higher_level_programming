@@ -1,3 +1,6 @@
 #!/bin/bash
-name = $PYFILE
-echo name
+name=$PYFILE
+ext='c'
+file_name=$name$ext
+cat $PYFILE > $file_name
+chmod u+x $file_name
