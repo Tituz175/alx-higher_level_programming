@@ -2,5 +2,5 @@
 number = 97
 while number != 123:
     if number != 101 and number != 113:
-        print(chr(number),end="")
+        print(chr(number), end="")
     number += 1
