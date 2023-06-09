@@ -10,4 +10,4 @@ if __name__ == "__main__":
         print("{:d} argument:".format(argc - 1))
         print("{:d}: {}".format(argc - 1, sys.argv[argc - 1]))
     else:
-        print("0 arguments")
+        print("{:d} arguments".format(argc - 1))
