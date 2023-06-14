@@ -5,16 +5,16 @@
  * print_python_list_info -> this function print the
  * details of the give list. the size, allocated
  * size and the data type of the list content.
- * @l: this is the given list
+ * @p: this is the given list
  * Return: void
  */
 
-void print_python_list_info(l)
+void print_python_list_info(PyObject *p)
 {
 	int count;
 	PyListObject *l;
 
-	l = (PyListObject *) list;
+	l = (PyListObject *) p;
 	printf("Hello World\n");
 	printf("[*] Size of the Python List = %ld\n", l->ob_base.ob_size);
 	printf("[*] Allocated = %ld\n", l->allocated);
