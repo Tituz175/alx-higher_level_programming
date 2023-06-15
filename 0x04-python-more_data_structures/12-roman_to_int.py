@@ -11,7 +11,7 @@ def roman_to_int(roman_string):
             }
     number = 0
     for string in roman_string:
-        if string == "I" and (
+        if string == "I" and len(roman_string) > 1 and (
                 roman_string[roman_string.index(string) + 1] == "X"
                 or roman_string[roman_string.index(string) + 1] == "V"
                 ):
