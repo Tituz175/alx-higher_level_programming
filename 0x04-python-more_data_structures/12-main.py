@@ -20,3 +20,30 @@ print("{} = {}".format(roman_number, roman_to_int(roman_number)))
 
 roman_number = "I"
 print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+roman_number = "IV"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+roman_number = "XXIV"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+roman_number = "LXXXVII"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+roman_number = "CXXIX"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+roman_number = "DCL"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+roman_number = "MCMXCVIII"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+roman_number = "XLIII"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+roman_number = "LXXVI"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
+
+roman_number = "CDXIX"
+print("{} = {}".format(roman_number, roman_to_int(roman_number)))
