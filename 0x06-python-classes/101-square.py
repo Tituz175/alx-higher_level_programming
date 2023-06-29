@@ -1,0 +1,72 @@
+#!/usr/bin/python3
+"""This is a module built for Square class"""
+
+
+class Square:
+    """This class represents a square"""
+    def __init__(self, size=0, position=(0, 0)):
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = size
+        if not isinstance(position, tuple):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if len(position) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if len([i for i in position if isinstance(i, int) and i >= 0]) != 2:
+            raise TypeError('position must be a tuple of 2 positive integers')
+        self.__position = position
+
+    def __str__(self):
+        return self.my_print()
+
+    @property
+    def size(self):
+        """This function returns the size property"""
+        return self.__size
+
+    @property
+    def position(self):
+        """This function returns the position property"""
+        return self.__position
+
+    @size.setter
+    def size(self, value):
+        """This function set the size property"""
+        if not isinstance(value, int):
+            raise TypeError("size must be an integer")
+        if value < 0:
+            raise ValueError("size must be >= 0")
+        self.__size = value
+
+    @position.setter
+    def position(self, value):
+        """This function set the position property"""
+        if not isinstance(value, tuple):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if len(value) != 2:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        if len([i for i in value if isinstance(i, int) and i >= 0]) != 2:
+            raise TypeError('position must be a tuple of 2 positive integers')
+        self.__position = value
+
+    def area(self):
+        """This function returns the area of the square"""
+        return self.__size**2
+
+    def my_print(self):
+        """This function print # for the shape of a square"""
+        if self.__size == 0:
+            return "\n"
+        else:
+            result = ""
+            for i in range(self.__position[1]):
+                result += "\n"
+            for rows in range(self.__size):
+                for i in range(self.__position[0]):
+                    result += " "
+                for col in range(self.__size):
+                    result += "#"
+                result += "\n"
+            return result
