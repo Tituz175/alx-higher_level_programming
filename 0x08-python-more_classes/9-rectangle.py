@@ -152,3 +152,15 @@ class Rectangle:
             return rect_2
         else:
             return rect_1
+
+    @classmethod
+    def square(cls, size=0):
+        """
+        This method create a square using the rectangle class
+
+        Args:
+            size: the size of the square to create
+        Return:
+            the square object
+        """
+        return cls(size, size)

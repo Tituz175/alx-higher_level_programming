@@ -63,11 +63,6 @@ class Rectangle:
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
 
-    # @classmethod
-    # def print_symbol(cls, string):
-    #     cls.print_symbol = string
-    #     print(cls.print_symbol)
-
     @property
     def width(self):
         """
