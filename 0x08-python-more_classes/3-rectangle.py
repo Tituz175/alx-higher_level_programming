@@ -27,7 +27,8 @@ class Rectangle:
         Return:
             the string representation of the rectangle
         """
-
+        if self.__height == 0 or self.__width == 0:
+            return ""
         return self.print_hash()
 
     @property
