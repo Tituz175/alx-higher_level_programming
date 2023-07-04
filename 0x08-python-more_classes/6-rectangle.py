@@ -49,7 +49,7 @@ class Rectangle:
             void
         """
 
-        print("Bye rectangle ...")
+        print("Bye rectangle...")
 
     @property
     def width(self):
