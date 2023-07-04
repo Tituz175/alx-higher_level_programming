@@ -6,6 +6,9 @@
 
 class Rectangle:
     """This class represent a rectangle"""
+
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """
         This is the rectangle class constructor
@@ -19,6 +22,8 @@ class Rectangle:
 
         self.width = width
         self.height = height
+
+        Rectangle.number_of_instances += 1
 
     def __str__(self):
         """
@@ -48,7 +53,7 @@ class Rectangle:
         Return:
             void
         """
-
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
 
     @property
