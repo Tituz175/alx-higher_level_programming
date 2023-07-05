@@ -6,7 +6,7 @@ the add_integer function sum two numbers(int or float) and return the sum in int
 Usage
 ======
 
-Importing the add int function from the module
+Importing the add integer function from the module
     >>> add_integer = __import__('0-add_integer').add_integer    
 
 Adding two positive numbers

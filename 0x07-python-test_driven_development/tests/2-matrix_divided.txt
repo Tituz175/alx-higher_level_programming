@@ -6,7 +6,7 @@ the matrix_divided function divide all the elements of a matrix and return a new
 Usage
 ======
 
-Importing the add int function from the module
+Importing the matrix divided function from the module
     >>> matrix_divided = __import__('2-matrix_divided').matrix_divided   
 
 
