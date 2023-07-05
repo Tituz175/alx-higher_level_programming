@@ -1,0 +1,46 @@
+The test case for the 5-text_indentation module
+===========================================
+
+the text_indentation function prints a text with 2 new lines after each of these characters: ., ? and :
+
+Usage
+======
+
+Importing the say my name function from the module
+    >>> text_indentation = __import__('5-text_indentation').text_indentation   
+
+
+Passing non string argument
+    >>> text_indentation(4)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
+
+Passing string argument
+    >>> text_indentation("Hello, world. How are you? What are you:")
+    Hello, world.
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+    What are you:
+    <BLANKLINE>
+
+Passing string argument with spaces arounds
+    >>> text_indentation("       Hello, world. How are you? What are you:      ")
+    Hello, world.
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+    What are you:
+    <BLANKLINE>
+
+Passing only spaces
+    >>> text_indentation("             ")
+
+Passing string argument with new line character in between
+    >>> text_indentation("Hello \n\n world.")
+    Hello
+    <BLANKLINE>
+    <BLANKLINE>
+    world.
+    <BLANKLINE>
