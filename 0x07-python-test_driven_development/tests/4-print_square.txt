@@ -1,0 +1,79 @@
+The test case for the 4-print_square module
+===========================================
+
+the print_square function prints a square with the character #
+
+Usage
+======
+
+Importing the say my name function from the module
+    >>> print_square = __import__('4-print_square').print_square   
+
+
+Passing size as positive integer
+    >>> print_square(4)
+    ####
+    ####
+    ####
+    ####
+
+Passing size as zero
+    >>> print_square(0)
+
+Passing size as one
+    >>> print_square(1)
+    #
+
+Passing size as negative integer
+    >>> print_square(-4)
+    Traceback (most recent call last):
+    ...
+    ValueError: size must be >= 0
+
+Passing size as float
+    >>> print_square(4.0)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+Passing size as float
+    >>> print_square(-4.0)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+Passing size as string
+    >>> print_square("Hello")
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+Passing size as list
+    >>> print_square(["Hello"])
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+Passing size as complex number
+    >>> print_square(int(2 + 5j))
+    Traceback (most recent call last):
+    ...
+    TypeError: int() argument must be a string, a bytes-like object or a real number, not 'complex'
+
+Passing size as NaN
+    >>> print_square(int('NaN'))
+    Traceback (most recent call last):
+    ...
+    ValueError: invalid literal for int() with base 10: 'NaN'
+
+Passing size as infinity
+    >>> print_square(int('inf'))
+    Traceback (most recent call last):
+    ...
+    ValueError: invalid literal for int() with base 10: 'inf'
+
+Passing size as infinity
+    >>> print_square(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
