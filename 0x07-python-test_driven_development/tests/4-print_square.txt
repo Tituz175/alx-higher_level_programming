@@ -58,7 +58,7 @@ Passing size as complex number
     >>> print_square(int(2 + 5j))
     Traceback (most recent call last):
     ...
-    TypeError: int() argument must be a string, a bytes-like object or a real number, not 'complex'
+    TypeError: can't convert complex to int
 
 Passing size as NaN
     >>> print_square(int('NaN'))
