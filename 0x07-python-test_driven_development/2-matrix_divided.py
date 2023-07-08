@@ -14,17 +14,22 @@ def matrix_divided(matrix, div):
     Return:
         new matrix
     """
+    test = set([len(row) for row in matrix])
+
+    if len(test) != 1:
+        raise TypeError("matrix must have each row with the same size")
+
     for row in matrix:
         if not isinstance(row, list):
             raise TypeError(
                 "matrix must be a matrix (list of lists) of integers/floats"
-                )
+            )
         for col in row:
             if not isinstance(col, int) or isinstance(col, float):
                 raise TypeError(
                     "matrix must be a matrix\
  (list of lists) of integers/floats"
-                    )
+                )
 
     if div == 0:
         raise ZeroDivisionError("division by zero")
