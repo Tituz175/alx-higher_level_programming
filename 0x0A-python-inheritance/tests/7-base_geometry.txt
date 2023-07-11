@@ -30,6 +30,11 @@ Integer validator:
     ...
     ValueError: age must be greater than 0
 
+    >>> geometry.integer_validator("age", -4)
+    Traceback (most recent call last):
+    ...
+    ValueError: age must be greater than 0
+
     >>> geometry.integer_validator("age", "10")
     Traceback (most recent call last):
     ...
