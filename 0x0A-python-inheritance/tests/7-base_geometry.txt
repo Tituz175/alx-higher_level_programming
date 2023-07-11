@@ -7,7 +7,25 @@ Usage
 ======
 
 Importing the BaseGeometry class from the module
-    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry    
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Checking for module docstring:
+    >>> mod_len = __import__('7-base_geometry').__doc__
+    >>> len(mod_len) > 1
+    True
+
+Checking for class docstring:
+    >>> cls_len = __import__('7-base_geometry').BaseGeometry.__doc__
+    >>> len(cls_len) > 1
+    True
+
+Checking for methods docstring:
+    >>> area_len = __import__('7-base_geometry').BaseGeometry.area.__doc__
+    >>> len(area_len) > 1
+    True
+    >>> validate_len = __import__('7-base_geometry').BaseGeometry.integer_validator.__doc__
+    >>> len(validate_len) > 1
+    True
 
 Checking for area failure:
     >>> geometry = BaseGeometry()
