@@ -6,7 +6,7 @@ the MyList is a class that inherits from Python list object.
 Usage
 ======
 
-Importing the add integer function from the module
+Importing the MyList class from the module
     >>> MyList = __import__('1-my_list').MyList    
 
 Creating the mylist object
