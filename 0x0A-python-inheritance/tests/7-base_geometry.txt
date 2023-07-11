@@ -1,0 +1,58 @@
+The test case for the 7-base_geometry module
+==========================================
+
+the BaseGeometry is a base class for geometry.
+
+Usage
+======
+
+Importing the BaseGeometry class from the module
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry    
+
+Checking for area failure:
+    >>> geometry = BaseGeometry()
+    >>> geometry.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
+
+Passing values to area:
+    >>> geometry = BaseGeometry()
+    >>> geometry.area(2)
+    Traceback (most recent call last):
+    ...
+    TypeError: BaseGeometry.area() takes 1 positional argument but 2 were given
+
+Integer validator:
+    >>> geometry = BaseGeometry()
+    >>> geometry.integer_validator("age", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: age must be greater than 0
+
+    >>> geometry.integer_validator("age", "10")
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    >>> geometry.integer_validator("age", 10.0)
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    >>> geometry.integer_validator("age", [10])
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+    >>> geometry.integer_validator("age", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: age must be an integer
+
+Incomplete argument:
+    >>> geometry = BaseGeometry()
+    >>> geometry.integer_validator("age")
+    Traceback (most recent call last):
+    ...
+    TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
