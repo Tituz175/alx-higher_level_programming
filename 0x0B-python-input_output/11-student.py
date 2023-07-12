@@ -29,5 +29,7 @@ class Student:
         Replaces all attributes of the Student
         """
         self.__init__(
-            json.get("first_name"), json.get("last_name"), json.get("age")
+            json.get("first_name", None),
+            json.get("last_name", None),
+            json.get("age", None)
         )
