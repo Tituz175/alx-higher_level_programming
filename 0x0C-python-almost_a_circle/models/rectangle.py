@@ -9,7 +9,7 @@ class Rectangle(Base):
     its properties from the base class
     """
 
-    def __init__(self, width, height, x=0, y=0, id=None):        
+    def __init__(self, width, height, x=0, y=0, id=None):
         self.width = width
         self.height = height
         self.x = x
@@ -43,7 +43,7 @@ class Rectangle(Base):
         if value < 1:
             raise ValueError("height must be > 0")
         self.__height = value
-    
+
     @property
     def x(self):
         """This gives the x of the rectangle"""
@@ -71,3 +71,7 @@ class Rectangle(Base):
         if value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
+
+    def area(self):
+        """This returns the area of the rectangle"""
+        return self.__width * self.__height

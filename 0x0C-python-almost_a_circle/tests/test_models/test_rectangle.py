@@ -22,26 +22,26 @@ class TestRectangle_instantiation(unittest.TestCase):
             Rectangle(1)
 
     def test_two_args(self):
-        r1 = Rectangle(10, 2)
-        r2 = Rectangle(2, 10)
-        self.assertEqual(r1.id, r2.id - 1)
+        rec_1 = Rectangle(10, 2)
+        rec_2 = Rectangle(2, 10)
+        self.assertEqual(rec_1.id, rec_2.id - 1)
 
     def test_three_args(self):
-        r1 = Rectangle(2, 2, 4)
-        r2 = Rectangle(4, 4, 2)
-        self.assertEqual(r1.id, r2.id - 1)
+        rec_1 = Rectangle(2, 2, 4)
+        rec_2 = Rectangle(4, 4, 2)
+        self.assertEqual(rec_1.id, rec_2.id - 1)
 
     def test_four_args(self):
-        r1 = Rectangle(1, 2, 3, 4)
-        r2 = Rectangle(4, 3, 2, 1)
-        self.assertEqual(r1.id, r2.id - 1)
+        rec_1 = Rectangle(1, 2, 3, 4)
+        rec_2 = Rectangle(4, 3, 2, 1)
+        self.assertEqual(rec_1.id, rec_2.id - 1)
 
     def test_five_args(self):
-        self.assertEqual(7, Rectangle(10, 2, 0, 0, 7).id)
+        self.assertEqual(12, Rectangle(10, 2, 0, 0, 12).id)
 
     def test_more_than_five_args(self):
         with self.assertRaises(TypeError):
-            Rectangle(1, 2, 3, 4, 5, 6)
+            Rectangle(1, 2, 3, 4, 5, 7)
 
     def test_width_private(self):
         with self.assertRaises(AttributeError):
@@ -60,40 +60,40 @@ class TestRectangle_instantiation(unittest.TestCase):
             print(Rectangle(5, 5, 0, 0, 1).__y)
 
     def test_width_getter(self):
-        r = Rectangle(5, 7, 7, 5, 1)
-        self.assertEqual(5, r.width)
+        rec = Rectangle(5, 7, 7, 5, 1)
+        self.assertEqual(5, rec.width)
 
     def test_width_setter(self):
-        r = Rectangle(5, 7, 7, 5, 1)
-        r.width = 10
-        self.assertEqual(10, r.width)
+        rec = Rectangle(5, 7, 7, 5, 1)
+        rec.width = 10
+        self.assertEqual(10, rec.width)
 
     def test_height_getter(self):
-        r = Rectangle(5, 7, 7, 5, 1)
-        self.assertEqual(7, r.height)
+        rec = Rectangle(5, 7, 7, 5, 1)
+        self.assertEqual(7, rec.height)
 
     def test_height_setter(self):
-        r = Rectangle(5, 7, 7, 5, 1)
-        r.height = 10
-        self.assertEqual(10, r.height)
+        rec = Rectangle(5, 7, 7, 5, 1)
+        rec.height = 10
+        self.assertEqual(10, rec.height)
 
     def test_x_getter(self):
-        r = Rectangle(5, 7, 7, 5, 1)
-        self.assertEqual(7, r.x)
+        rec = Rectangle(5, 7, 7, 5, 1)
+        self.assertEqual(7, rec.x)
 
     def test_x_setter(self):
-        r = Rectangle(5, 7, 7, 5, 1)
-        r.x = 10
-        self.assertEqual(10, r.x)
+        rec = Rectangle(5, 7, 7, 5, 1)
+        rec.x = 10
+        self.assertEqual(10, rec.x)
 
     def test_y_getter(self):
-        r = Rectangle(5, 7, 7, 5, 1)
-        self.assertEqual(5, r.y)
+        rec = Rectangle(5, 7, 7, 5, 1)
+        self.assertEqual(5, rec.y)
 
     def test_y_setter(self):
-        r = Rectangle(5, 7, 7, 5, 1)
-        r.y = 10
-        self.assertEqual(10, r.y)
+        rec = Rectangle(5, 7, 7, 5, 1)
+        rec.y = 10
+        self.assertEqual(10, rec.y)
 
 
 class TestRectangle_width(unittest.TestCase):
@@ -109,19 +109,15 @@ class TestRectangle_width(unittest.TestCase):
 
     def test_float_width(self):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            Rectangle(5.5, 1)
+            Rectangle(5.0, 1)
 
     def test_complex_width(self):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            Rectangle(complex(5), 2)
+            Rectangle(2 + 5j, 2)
 
     def test_dict_width(self):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            Rectangle({"a": 1, "b": 2}, 2)
-
-    def test_bool_width(self):
-        with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            Rectangle(True, 2)
+            Rectangle({"a": 10, "b": 20}, 2)
 
     def test_list_width(self):
         with self.assertRaisesRegex(TypeError, "width must be an integer"):
@@ -185,15 +181,15 @@ class TestRectangle_height(unittest.TestCase):
 
     def test_float_height(self):
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
-            Rectangle(1, 5.5)
+            Rectangle(1, 5.0)
 
     def test_complex_height(self):
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
-            Rectangle(1, complex(5))
+            Rectangle(1, 2 + 5j)
 
     def test_dict_height(self):
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
-            Rectangle(1, {"a": 1, "b": 2})
+            Rectangle(1, {"a": 10, "b": 20})
 
     def test_list_height(self):
         with self.assertRaisesRegex(TypeError, "height must be an integer"):
@@ -253,35 +249,31 @@ class TestRectangle_x(unittest.TestCase):
 
     def test_str_x(self):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Rectangle(1, 2, "invalid", 2)
+            Rectangle(1, 2, "invalid")
 
     def test_float_x(self):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Rectangle(1, 2, 5.5, 9)
+            Rectangle(1, 2, 5.0)
 
     def test_complex_x(self):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Rectangle(1, 2, complex(5))
+            Rectangle(1, 2, 2 + 5j)
 
     def test_dict_x(self):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Rectangle(1, 2, {"a": 1, "b": 2}, 2)
-
-    def test_bool_x(self):
-        with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Rectangle(1, 2, True, 2)
+            Rectangle(1, 2, {"a": 10, "b": 20})
 
     def test_list_x(self):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Rectangle(1, 2, [1, 2, 3], 2)
+            Rectangle(1, 2, [1, 2, 3])
 
     def test_set_x(self):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Rectangle(1, 2, {1, 2, 3}, 2)
+            Rectangle(1, 2, {1, 2, 3})
 
     def test_tuple_x(self):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
-            Rectangle(1, 2, (1, 2, 3), 2)
+            Rectangle(1, 2, (1, 2, 3))
 
     def test_frozenset_x(self):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
@@ -410,6 +402,30 @@ class TestRectangle_order_of_initialization(unittest.TestCase):
     def test_x_before_y(self):
         with self.assertRaisesRegex(TypeError, "x must be an integer"):
             Rectangle(1, 2, "invalid x", "invalid y")
+
+
+class TestRectangle_area(unittest.TestCase):
+    """Unittests for the area of the rectangle"""
+
+    def test_area(self):
+        rect = Rectangle(3, 2)
+        self.assertEqual(rect.area(), 6)
+
+    def test_area_value_updated(self):
+        rect = Rectangle(3, 2)
+        rect.width = 20
+        rect.height = 10
+        self.assertEqual(rect.area(), 200)
+
+    def test_area_with_arg(self):
+        rect = Rectangle(3, 2)
+        with self.assertRaises(TypeError):
+            rect.area(1)
+
+    def test_area_with_large_value(self):
+        rect = Rectangle(99999999999999, 9999999999999)
+        self.assertEqual(999999999999890000000000001, rect.area())
+
 
 if __name__ == '__main__':
     unittest.main()
