@@ -427,5 +427,12 @@ class TestRectangle_area(unittest.TestCase):
         self.assertEqual(999999999999890000000000001, rect.area())
 
 
+# class TestRectangle_stdout(unittest.TestCase):
+#     """Unittests for the rectangle stdout response"""
+
+#     @classmethod
+
+
+
 if __name__ == '__main__':
     unittest.main()
