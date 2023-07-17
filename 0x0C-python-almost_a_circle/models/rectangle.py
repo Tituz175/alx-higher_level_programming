@@ -95,7 +95,7 @@ class Rectangle(Base):
                 print("#", end="")
             print()
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         Update the attributes of the object.
 
@@ -105,6 +105,10 @@ class Rectangle(Base):
             The arguments should be provided in
             the order: id, width, height, x, y.
         """
-        attributes = ["id", "width", "height", "x", "y"]
-        for attr, value in zip(attributes, args):
-            setattr(self, attr, value)
+        if args:
+            attributes = ["id", "width", "height", "x", "y"]
+            for attr, value in zip(attributes, args):
+                setattr(self, attr, value)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
