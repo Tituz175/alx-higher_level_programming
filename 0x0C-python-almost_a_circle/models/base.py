@@ -65,15 +65,19 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """
-        Loads objects from a JSON file and returns a list of instantiated objects.
+        Loads objects from a JSON file and returns
+        a list of instantiated objects.
 
         Returns:
             A list of instantiated objects loaded from the JSON file.
-        """ 
+        """
         file_name = f"{cls.__name__}.json"
         if os.path.exists(file_name):
             with open(file_name, "r", encoding="utf-8") as f:
                 json_data = f.read()
-                return [cls.create(**obj) for obj in cls.from_json_string(json_data)]
+                return [
+                    cls.create(**obj) for obj
+                    in cls.from_json_string(json_data)
+                ]
         else:
             return []
