@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This is a Python package base file"""
 import json
+import os
 
 
 class Base:
@@ -65,11 +66,14 @@ class Base:
     def load_from_file(cls):
         """
         Loads objects from a JSON file and returns a list of instantiated objects.
-    
+
         Returns:
             A list of instantiated objects loaded from the JSON file.
         """ 
         file_name = f"{cls.__name__}.json"
-        with open(file_name, "r", encoding="utf-8") as f:
-            json_data = f.read()
-            return [cls.create(**obj) for obj in cls.from_json_string(json_data)]
+        if os.path.exists(file_name):
+            with open(file_name, "r", encoding="utf-8") as f:
+                json_data = f.read()
+                return [cls.create(**obj) for obj in cls.from_json_string(json_data)]
+        else:
+            return []
