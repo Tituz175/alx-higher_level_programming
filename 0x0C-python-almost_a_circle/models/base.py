@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-import json
 """This is a Python package base file"""
+import json
+
 
 
 class Base:
