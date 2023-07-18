@@ -3,7 +3,6 @@
 import json
 
 
-
 class Base:
     """This is the base class"""
     __nb_objects = 0
