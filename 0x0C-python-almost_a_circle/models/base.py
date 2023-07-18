@@ -38,7 +38,7 @@ class Base:
         my_Objlist = [obj.to_dictionary() for obj in list_objs]
         file_name = f"{cls.__name__}.json"
         with open(file_name, "w", encoding="utf-8") as f:
-            if my_Objlist:
+            if list_objs:
                 f.write(cls.to_json_string(my_Objlist))
             else:
                 f.write("[]")
