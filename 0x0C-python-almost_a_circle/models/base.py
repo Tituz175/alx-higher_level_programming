@@ -60,3 +60,16 @@ class Base:
             new_obj = cls(1)
         new_obj.update(**dictionary)
         return new_obj
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Loads objects from a JSON file and returns a list of instantiated objects.
+    
+        Returns:
+            A list of instantiated objects loaded from the JSON file.
+        """ 
+        file_name = f"{cls.__name__}.json"
+        with open(file_name, "r", encoding="utf-8") as f:
+            json_data = f.read()
+            return [cls.create(**obj) for obj in cls.from_json_string(json_data)]
