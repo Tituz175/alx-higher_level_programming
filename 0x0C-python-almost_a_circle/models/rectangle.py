@@ -97,7 +97,7 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """
-        Update the attributes of the object.
+        Update the attributes of the square.
 
         Args:
             *args: Variable-length argument list
@@ -115,7 +115,7 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """
-        Returns a dictionary representation of the object.
+        Returns a dictionary representation of the square.
         """
         return {
             "x": self.x,
