@@ -25,3 +25,16 @@ class Base:
             A JSON string representation of the list of dictionaries.
         """
         return json.dumps(list_dictionaries) if list_dictionaries else "[]"
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """
+        Saves a list of objects to a JSON file.
+
+        Args:
+            cls: The class of the objects.
+            list_objs: A list of objects to be saved.
+        """
+        my_Objlist = [obj.to_dictionary() for obj in list_objs]
+        with open("Rectangle.json", "w", encoding="utf-8") as f:
+            f.write(cls.to_json_string(my_Objlist))
