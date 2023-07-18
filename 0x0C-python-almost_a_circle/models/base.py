@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+import json
 """This is a Python package base file"""
 
 
@@ -12,3 +13,14 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    def to_json_string(list_dictionaries):
+        """
+        Converts a list of dictionaries to a JSON string.
+
+        Args:
+            list_dictionaries: A list of dictionaries to be converted.
+        Returns:
+            A JSON string representation of the list of dictionaries.
+        """
+        return json.dumps(list_dictionaries) if list_dictionaries else "[]"
