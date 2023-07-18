@@ -45,8 +45,18 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """Returns list of JSON string representations"""
+        """This function returns list of JSON string representations"""
         if json_string:
             return json.loads(json_string)
         else:
             return []
+
+    @classmethod
+    def create(cls, **dictionary):
+        """This function returns an instance with all attributes already set"""
+        if cls.__name__ == "Rectangle":
+            new_obj = cls(1, 1)
+        else:
+            new_obj = cls(1)
+        new_obj.update(**dictionary)
+        return new_obj
