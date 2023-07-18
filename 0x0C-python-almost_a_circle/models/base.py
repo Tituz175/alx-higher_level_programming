@@ -36,5 +36,6 @@ class Base:
             list_objs: A list of objects to be saved.
         """
         my_Objlist = [obj.to_dictionary() for obj in list_objs]
-        with open("Rectangle.json", "w", encoding="utf-8") as f:
+        file_name = f"{cls.__name__}.json"
+        with open(file_name, "w", encoding="utf-8") as f:
             f.write(cls.to_json_string(my_Objlist))
