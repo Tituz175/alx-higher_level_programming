@@ -42,3 +42,11 @@ class Base:
                 f.write(cls.to_json_string(my_Objlist))
             else:
                 f.write("[]")
+
+    @staticmethod
+    def from_json_string(json_string):
+        """Returns list of JSON string representations"""
+        if json_string:
+            return json.loads(json_string)
+        else:
+            return []
