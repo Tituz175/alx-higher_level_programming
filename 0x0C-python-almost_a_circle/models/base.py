@@ -3,6 +3,8 @@
 import json
 import os
 import csv
+import turtle
+import random
 
 
 class Base:
@@ -133,3 +135,40 @@ class Base:
                 return [cls.create(**obj) for obj in new_obj]
         else:
             return []
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+        Draws rectangles and squares using the turtle graphics module.
+
+        Args:
+            list_rectangles (list): A list of Rectangle objects.
+            list_squares (list): A list of Square objects.
+
+        Returns:
+            None
+        """
+        wn = turtle.Screen()
+        wn.colormode(255)
+        wn.bgcolor(51, 65, 85)
+        wn.title("Turtle")
+        wn.setup(width=0.9, height=0.8)
+
+        skk = turtle.Turtle()
+        skk.penup()
+        skk.width(8)
+        for rect in list_rectangles + list_squares:
+            r = random.randint(0, 255)
+            b = random.randint(0, 255)
+            g = random.randint(0, 255)
+            skk.pencolor(r, g, b)
+            skk.goto(rect.x, rect.y)
+            skk.pendown()
+            for _ in range(4):
+                skk.forward(rect.width)
+                skk.right(90)
+                skk.forward(rect.height)
+            skk.hideturtle()
+            skk.penup()
+
+        turtle.exitonclick()
