@@ -10,5 +10,4 @@ function factorial (n) {
   }
   console.log(result);
 }
-
 factorial(number);
