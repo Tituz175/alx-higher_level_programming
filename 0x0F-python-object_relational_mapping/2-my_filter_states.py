@@ -6,7 +6,7 @@ provided via the command line
 """
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import sys
     import MySQLdb
 
