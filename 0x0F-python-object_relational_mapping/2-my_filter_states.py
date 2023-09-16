@@ -16,7 +16,7 @@ if __name__ == '__main__':
         host=host, port=3306, user=user, password=password, db=database
         )
 
-    query = "SELECT * FROM states WHERE name LIKE BINARY %s ORDER BY id"
+    query = """SELECT * FROM states WHERE name LIKE BINARY %s ORDER BY id"""
 
     cursor = db.cursor()
     cursor.execute(query, (search_state, ))
