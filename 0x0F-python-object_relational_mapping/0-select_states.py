@@ -5,7 +5,6 @@ if __name__ == "__main__":
     import MySQLdb
     import sys
 
-
     host = "localhost"
     user = sys.argv[1]
     password = sys.argv[2]
