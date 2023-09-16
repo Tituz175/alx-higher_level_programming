@@ -17,15 +17,10 @@ if __name__ == '__main__':
         charset="utf8"
         )
 
-    query = """SELECT * FROM states """\
-        """WHERE name LIKE BINARY %s """\
-        """ORDER BY id;"""
+    query = """SELECT * FROM states WHERE name LIKE BINARY %s ORDER BY id"""
 
     cursor = db.cursor()
     cursor.execute(query, (search_state, ))
     rows = cursor.fetchall()
     for row in rows:
         print(row)
-
-    cursor.close()
-    db.close()
