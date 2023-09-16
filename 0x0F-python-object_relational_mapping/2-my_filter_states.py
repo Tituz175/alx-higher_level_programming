@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This is a simple script to print the state given."""
+"""This module is used to search for a state in the database."""
 
 
 if __name__ == '__main__':
@@ -13,7 +13,8 @@ if __name__ == '__main__':
     search_state = sys.argv[4]
 
     db = MySQLdb.connect(
-        host=host, port=3306, user=user, password=password, db=database
+        host=host, port=3306, user=user, password=password, db=database,
+        charset="utf8"
         )
 
     query = """SELECT * FROM states WHERE name LIKE BINARY %s ORDER BY id"""
