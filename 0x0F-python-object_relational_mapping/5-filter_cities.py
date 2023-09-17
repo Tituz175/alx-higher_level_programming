@@ -27,19 +27,13 @@ if __name__ == '__main__':
         host=host, port=3306, user=user, password=password, db=database
         )
 
-    query = """SELECT cities.id, cities.name, states.name """\
-        """FROM cities JOIN states ON cities.state_id = states.id """\
-        """WHERE states.name = '{}'"""\
-        """ORDER BY cities.id""".format(state_name)
+    query = """SELECT * """\
+        """FROM cities INNER JOIN states ON cities.state_id = states.id """\
+        """ORDER BY cities.id"""
 
     cursor = db.cursor()
     cursor.execute(query)
     results = cursor.fetchall()
-    for row in results:
-        if results.index(row) == len(results) - 1:
-            print(row[-2])
-        else:
-            print(row[-2], end=", ")
-
+    print(", ".join([row[2] for row in results if row[-1] == state_name]))
     cursor.close()
     db.close()
