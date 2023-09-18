@@ -16,11 +16,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(State).order_by(State.id.asc()).all()
+    states = session.query(State).filter(State.name.contains("a"))
 
     for state in states:
-        if "a" in state.name:
-            session.delete(state)
+        session.delete(state)
+
     session.commit()
 
     session.close()
