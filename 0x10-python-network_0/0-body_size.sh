@@ -1,3 +1,3 @@
 #!/bin/bash
-# a Bash script that sends a request to a URL, and displays the size of the body
-curl -s -o /dev/null -w "%{size_download}" "$1"
+# cURL b0dy siz3
+curl -sw '%{size_download}\n' -o /dev/null "$1"
