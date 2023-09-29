@@ -1,0 +1,3 @@
+#!/bin/bash
+# takes in a URL, sends request to that URL, print status
+curl -sI "$1"
