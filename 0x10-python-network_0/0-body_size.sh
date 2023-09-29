@@ -1,3 +1,3 @@
 #!/bin/bash
-# cURL b0dy siz3
-curl -sw '%{size_download}\n' -o /dev/null "$1"
+# takes in a URL, sends a request to that URL,
+curl -sI "$1" | grep -i Content-Length | awk '{print $2}'
