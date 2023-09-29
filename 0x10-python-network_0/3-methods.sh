@@ -1,3 +1,3 @@
 #!/bin/bash
 # takes in a URL, sends OPTION request to that URL,
-curl -sX OPTIONS "$1"
+curl -sXI OPTIONS "$1"
