@@ -8,6 +8,8 @@ import requests
 import sys
 
 if __name__ == "__main__":
-    data = {'email': sys.argv[2]}
-    res = requests.post(sys.argv[1], data=data)
-    print(res.text)
+    try:
+        res = requests.get(sys.argv[1])
+        res.text
+    except requests.exceptions.RequestException as e:
+        print(f"Error code: {e.code}")
