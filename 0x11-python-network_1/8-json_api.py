@@ -18,5 +18,5 @@ if __name__ == "__main__":
     try:
         user_data = res.json()
         print(f"[{user_data.get('id')}] {user_data.get('name')}")
-    except:
-        print("No result")
+    except ValueError:
+        print("Not a valid JSON")
