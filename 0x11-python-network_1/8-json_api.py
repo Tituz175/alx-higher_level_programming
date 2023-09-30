@@ -9,8 +9,8 @@ import sys
 
 if __name__ == "__main__":
     q = ""
-    if sys.argv[2]:
-        q = sys.argv[2]
+    if sys.argv[1]:
+        q = sys.argv[1]
 
-    res = requests.post(f"{sys.argv[1]}?q={q}")
+    res = requests.post(f"http://0.0.0.0:5000/search_user?q={q}")
     print(res.text)
