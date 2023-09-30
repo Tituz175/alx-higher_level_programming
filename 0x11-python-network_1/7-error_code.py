@@ -12,4 +12,4 @@ if __name__ == "__main__":
         res = requests.get(sys.argv[1])
         print(res.text)
     except requests.exceptions.RequestException as e:
-        print(f"Error code: {e}")
+        print(f"Error code")
