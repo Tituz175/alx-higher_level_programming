@@ -9,8 +9,14 @@ import sys
 
 if __name__ == "__main__":
     q = ""
-    if sys.argv[1]:
+    if len(sys.argv) > 1:
         q = sys.argv[1]
 
-    res = requests.post(f"http://0.0.0.0:5000/search_user?q={q}")
-    print(res.body)
+    data = {"q": q}
+
+    res = requests.post("http://0.0.0.0:5000/search_user", data=data)
+    try:
+        user_data = res.json()
+        print(f"[{user_data.get('id')}] {user_data.get('name')}")
+    except:
+        print("No result")
