@@ -10,6 +10,6 @@ import sys
 if __name__ == "__main__":
     try:
         res = requests.get(sys.argv[1])
-        print(res.text)
+        print(f" this{res.text}")
     except requests.exceptions.RequestException as e:
         print(f"Error code")
