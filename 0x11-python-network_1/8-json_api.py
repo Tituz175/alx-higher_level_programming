@@ -13,4 +13,4 @@ if __name__ == "__main__":
         q = sys.argv[1]
 
     res = requests.post(f"http://0.0.0.0:5000/search_user?q={q}")
-    print(res.text)
+    print(res)
