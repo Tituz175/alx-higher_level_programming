@@ -3,7 +3,7 @@
 
 const request = require('request');
 const url = process.argv[2];
-const id = 18
+const id = 18;
 
 request.get(url, (error, response, body) => {
   if (error) {
